@@ -1,0 +1,82 @@
+Spec botvow/0.1
+Bot 2 Bot sample: examples/bot2bot-log.json (5 entries), head ee5be8bb328d1e8465a80c4ae7e04647a61abcbbbc2c38fa1c0bd693c9e9d3c4
+
+[PASS] 1. Bot 2 Bot original log: VERIFY OK
+[PASS] privacy: raw messages stored? False
+[PASS] selective disclosure: revealed proposal matches its hash? True
+
+[PASS] 2. edit agreement (no re-sign): REJECTED
+      - entry 3 (agreement): entry_hash does not match content (entry was modified)
+      - entry 3 (agreement): INVALID signature by ed25519:2bcf49eb6d012606
+      - entry 3 (agreement): INVALID signature by ed25519:af43ab241bb8130f
+      - entry 3 (agreement): author did not sign
+      - entry 3 (agreement): needs signatures of ALL parties
+[PASS] 3. edit and recompute entry_hash: REJECTED
+      - entry 3 (agreement): INVALID signature by ed25519:2bcf49eb6d012606
+      - entry 3 (agreement): INVALID signature by ed25519:af43ab241bb8130f
+      - entry 3 (agreement): author did not sign
+      - entry 3 (agreement): needs signatures of ALL parties
+      - entry 4 (seal): prev_hash does not match hash of entry 3 (broken chain)
+[PASS] 4. delete the counter-proposal: REJECTED
+      - entry 2 (agreement): seq 3 != position 2 (deleted/reordered entry)
+      - entry 2 (agreement): prev_hash does not match hash of entry 1 (broken chain)
+      - entry 3 (seal): seq 4 != position 3 (deleted/reordered entry)
+      - seal entry count does not match
+[PASS] 5. reorder entries: REJECTED
+      - entry 1 (counter): seq 2 != position 1 (deleted/reordered entry)
+      - entry 1 (counter): prev_hash does not match hash of entry 0 (broken chain)
+      - entry 2 (proposal): seq 1 != position 2 (deleted/reordered entry)
+      - entry 2 (proposal): prev_hash does not match hash of entry 1 (broken chain)
+      - entry 3 (agreement): prev_hash does not match hash of entry 2 (broken chain)
+[PASS] 6. rewrite and sign with an outsider key: REJECTED
+      - entry 3 (agreement): signature by unknown key or algorithm ed25519:1972da52ab087496
+      - entry 3 (agreement): author did not sign
+      - entry 3 (agreement): needs signatures of ALL parties
+      - entry 4 (seal): prev_hash does not match hash of entry 3 (broken chain)
+[PASS] 7. truncate (drop seal): REJECTED
+      - last entry is not a seal (log may be truncated)
+[PASS] 8. agreement with one signature only: REJECTED
+      - entry 3 (agreement): needs signatures of ALL parties
+      - entry 4 (seal): prev_hash does not match hash of entry 3 (broken chain)
+[PASS] 9. edit the genesis: REJECTED
+      - entry 0 (genesis): entry_hash does not match content (entry was modified)
+      - entry 0 (genesis): INVALID signature by ed25519:2bcf49eb6d012606
+      - entry 0 (genesis): INVALID signature by ed25519:af43ab241bb8130f
+      - entry 0 (genesis): author did not sign
+      - entry 0 (genesis): needs signatures of ALL parties
+
+--- Open door: agents from other AI platforms follow the same rules ---
+[PASS] 10. Bot + agent of another AI, same rules: VERIFY OK
+[PASS] 11. agent brings its own rules/exceptions (even co-signed): REJECTED
+      - entry 2 (agreement): own rules or exceptions are not allowed (['exceptions', 'own_rules']) - every party follows the same BotVow rules
+[PASS] 12. agent invents its own entry type and field: REJECTED
+      - entry 2 (agent_custom_commitment): fields differ from the BotVow rules (extra: ['rules_override'], missing: [])
+      - entry 2 (agent_custom_commitment): entry type not allowed by the BotVow rules
+
+SUMMARY: 14/14 checks behaved as expected
+
+--- CLI verify: Bot 2 Bot original ---
+VERIFY OK
+--- CLI verify: open door (Bot + agent of another AI) ---
+VERIFY OK
+--- CLI verify: examples/bot2bot-log-tampered.json (expected to be rejected) ---
+REJECTED
+ - entry 3 (agreement): entry_hash does not match content (entry was modified)
+ - entry 3 (agreement): INVALID signature by ed25519:2bcf49eb6d012606
+ - entry 3 (agreement): INVALID signature by ed25519:af43ab241bb8130f
+ - entry 3 (agreement): author did not sign
+ - entry 3 (agreement): needs signatures of ALL parties
+(exit 1 as expected)
+--- CLI verify: examples/open-door-own-rules-rejected.json (expected to be rejected) ---
+REJECTED
+ - entry 2 (agreement): own rules or exceptions are not allowed (['exceptions', 'own_rules']) - every party follows the same BotVow rules
+(exit 1 as expected)
+--- unit tests ---
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+OK
+--- schema ---
+schema OK for 5 entries in bot2bot-log.json
+schema OK for 4 entries in open-door-log.json

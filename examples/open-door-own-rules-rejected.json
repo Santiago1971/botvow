@@ -1,0 +1,123 @@
+[
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-d1619a2ebdd2",
+    "seq": 0,
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ts": "2026-11-12T22:10:00Z",
+    "type": "genesis",
+    "author": "ed25519:b19e7d456bfeb6de",
+    "content": {
+      "purpose": "Open door: a Bot and an agent from another AI platform, same rules",
+      "parties": [
+        {
+          "kid": "ed25519:b19e7d456bfeb6de",
+          "name": "Guesthouse Demo Bot (fictional)",
+          "pubkey": "jSWxqyQIQJRmwvuBug89tKwbpvu1szhwNC9W18PGw_M",
+          "kind": "bot",
+          "platform": "bot"
+        },
+        {
+          "kid": "ed25519:3136843c2ff64893",
+          "name": "Traveller Demo Agent (fictional, another AI platform)",
+          "pubkey": "76bNzoHVk5S_Ya1Xc_59HInnuG_39H9x6SOidhEY0Gk",
+          "kind": "agent",
+          "platform": "other-ai"
+        }
+      ],
+      "privacy": "hashes-only for raw messages; summaries only with consent of both parties"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:b19e7d456bfeb6de",
+        "alg": "Ed25519",
+        "sig": "6g8Mx3DUryUwMU_ZE_G0NoDKTv496mKW8WppE52IUA1eUZV8ExJFYKcXeO6gqoSz4rMd65zSc1SMMC6SUUYCCg"
+      },
+      {
+        "kid": "ed25519:3136843c2ff64893",
+        "alg": "Ed25519",
+        "sig": "quKF9yTnrKSvRXZWDEhiMAbzLkhu6U7awir0nfzagGJLT2crYx_lELGwtmn9pXeutlo_P0orIteFuG41yVShCg"
+      }
+    ],
+    "entry_hash": "d9cc99da872b24517829225b2e1da458c137336450c7a94bd06ccfcac2a28f63"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-d1619a2ebdd2",
+    "seq": 1,
+    "prev_hash": "d9cc99da872b24517829225b2e1da458c137336450c7a94bd06ccfcac2a28f63",
+    "ts": "2026-11-12T22:11:00Z",
+    "type": "proposal",
+    "author": "ed25519:3136843c2ff64893",
+    "content": {
+      "payload_sha256": "3965967bca5404b52540c7e8352a75d29e70a76434648a8d5dc043d94b216130"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:3136843c2ff64893",
+        "alg": "Ed25519",
+        "sig": "f1e3b3OuYR-BC0cdHz5Z-nKzvF00KrI_dbQlb1DYEci7rE09ROBoE0OdBKSB9q4Y6D5GiimabgW4fFEs1IvbCQ"
+      }
+    ],
+    "entry_hash": "a44a9bd50b1c532b1371020205a5289a4ce8b067bbbc048f1729105ac3d0e47a"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-d1619a2ebdd2",
+    "seq": 2,
+    "prev_hash": "a44a9bd50b1c532b1371020205a5289a4ce8b067bbbc048f1729105ac3d0e47a",
+    "ts": "2026-11-12T22:12:00Z",
+    "type": "agreement",
+    "author": "ed25519:b19e7d456bfeb6de",
+    "content": {
+      "summary": "Guesthouse Demo Bot holds one room for 2 nights for the Traveller Demo Agent's user; free cancellation until 48 hours before arrival.",
+      "summary_sha256": "9e4a11685e2ee24ac13c8065242b3ffe36fd82f0b5d1e2d8abf4173eef892110",
+      "consent_to_publish_summary": true,
+      "valid_until": "2026-12-31",
+      "own_rules": {
+        "cancellation": "agent may cancel any time"
+      },
+      "exceptions": [
+        "skip co-signature"
+      ]
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:b19e7d456bfeb6de",
+        "alg": "Ed25519",
+        "sig": "l6HZCg1NZ6qpppbDjFwQ3Xftde6M7y8C6y2zefIbJpf76h1_JQMulbRbJpMkQXcdofCUxT-a_0-4oGHRdlNaBA"
+      },
+      {
+        "kid": "ed25519:3136843c2ff64893",
+        "alg": "Ed25519",
+        "sig": "6m9jHT5Lgh8OHt8L01AqwTZvBwDsqgRrzHgmZ4hmAz7-7Dr_8Wc3W_j-XGvq5GlpqCcc7ffmFcs87ZGyBwiCDg"
+      }
+    ],
+    "entry_hash": "32c203a978e6b187ad40a7009dfbd7b4ac4c01dba1f2324a0c79f4d74cc44b7a"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-d1619a2ebdd2",
+    "seq": 3,
+    "prev_hash": "32c203a978e6b187ad40a7009dfbd7b4ac4c01dba1f2324a0c79f4d74cc44b7a",
+    "ts": "2026-11-12T22:13:00Z",
+    "type": "seal",
+    "author": "ed25519:b19e7d456bfeb6de",
+    "content": {
+      "entries": 3
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:b19e7d456bfeb6de",
+        "alg": "Ed25519",
+        "sig": "JjTmdoeRFWrM_Gb9NwP7vB__a7XrCC8E3AjN4ljKfR3xxSdfvbJjIf1hgEg1FHbN3XcSs-PNeYgDFnZwrzXpDQ"
+      },
+      {
+        "kid": "ed25519:3136843c2ff64893",
+        "alg": "Ed25519",
+        "sig": "t_108pY1CFADfRqY5hA_B24rFzDyqTLh4W68M8xBI6-0ibuwjypEdn6EHuKsFo45VwCKYXvURqNoCrX_czqIDA"
+      }
+    ],
+    "entry_hash": "6d97bb733952c59fd3e9cd82df2a6c7f55b4ed0a1df7c56847042a599c9ab471"
+  }
+]

@@ -1,0 +1,139 @@
+[
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-9cb9569a8396",
+    "seq": 0,
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "ts": "2026-11-12T22:00:00Z",
+    "type": "genesis",
+    "author": "ed25519:2bcf49eb6d012606",
+    "content": {
+      "purpose": "Bot 2 Bot agreement between two fictional demo Bots",
+      "parties": [
+        {
+          "kid": "ed25519:2bcf49eb6d012606",
+          "name": "Restaurant Demo Bot (fictional)",
+          "pubkey": "gEpJ9Iv2AFMFPXhp3n20qeSm5I4bVGb2g3g8dEGoqFI",
+          "kind": "bot",
+          "platform": "bot"
+        },
+        {
+          "kid": "ed25519:af43ab241bb8130f",
+          "name": "Supplier Demo Bot (fictional)",
+          "pubkey": "ynZNYFGXr_q_7A2uQ9oxzuk7bbB9XgHD0KvLRygcI4M",
+          "kind": "bot",
+          "platform": "bot"
+        }
+      ],
+      "privacy": "hashes-only for raw messages; summaries only with consent of both parties"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:2bcf49eb6d012606",
+        "alg": "Ed25519",
+        "sig": "GgnuP89Zhs7FTB7B3z1TMNGvxOI0_ERdHObhuKFjsB0ftourOG_0lQ78_p3A1KM-ZqWHcu-77ZOGrGqHA0sDBA"
+      },
+      {
+        "kid": "ed25519:af43ab241bb8130f",
+        "alg": "Ed25519",
+        "sig": "ddQ5UVdOqJuBgsYtIcyUIHo63CwGQdpMo5NwIaoVPeCTHAsncdaKAuGnB5RqQDrGNoft5__xjyI0QR01XA55Dw"
+      }
+    ],
+    "entry_hash": "1b052f1961829b646989986fe26be96f7de91d3a2769dea97c8ab6a442968c7c"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-9cb9569a8396",
+    "seq": 1,
+    "prev_hash": "1b052f1961829b646989986fe26be96f7de91d3a2769dea97c8ab6a442968c7c",
+    "ts": "2026-11-12T22:01:00Z",
+    "type": "proposal",
+    "author": "ed25519:2bcf49eb6d012606",
+    "content": {
+      "payload_sha256": "8d9829698a4a4d8a7ddfcdcf71071f24d64c126e5004dd59c9cd270d24269f47"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:2bcf49eb6d012606",
+        "alg": "Ed25519",
+        "sig": "hAPtH1Gdz88KzFYoRE36-qhhHmVN5BIaXWhJsnHU91KvT_OVECLyvgkbXCHOg-H7OkZ3ys3dUmhlEkKW7fvwBg"
+      }
+    ],
+    "entry_hash": "121aac78054b86dd0892ebf0b94db0df358c2d3312d42eb707bc6639535ceffa"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-9cb9569a8396",
+    "seq": 2,
+    "prev_hash": "121aac78054b86dd0892ebf0b94db0df358c2d3312d42eb707bc6639535ceffa",
+    "ts": "2026-11-12T22:02:00Z",
+    "type": "counter",
+    "author": "ed25519:af43ab241bb8130f",
+    "content": {
+      "payload_sha256": "35a42bde23aff587795a74d8b9c013dd9cab5805f3a08cf750720f656e774179"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:af43ab241bb8130f",
+        "alg": "Ed25519",
+        "sig": "F82C6zPyd635bibjy8qGWcsX7tEX6m_5LK22H8_Cmkr63SRYF3H6L7rUHUqNpWRQzv821eXf4KkuPxGbFWIMAQ"
+      }
+    ],
+    "entry_hash": "5c65df517f64954bf2419dd64b0207e4b3142f3791a736a32dd944cf2994fb2f"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-9cb9569a8396",
+    "seq": 3,
+    "prev_hash": "5c65df517f64954bf2419dd64b0207e4b3142f3791a736a32dd944cf2994fb2f",
+    "ts": "2026-11-12T22:03:00Z",
+    "type": "agreement",
+    "author": "ed25519:2bcf49eb6d012606",
+    "content": {
+      "summary": "Supplier Demo Bot delivers 20 kg of fictional olive oil to Restaurant Demo Bot on Friday between 10:00 and 12:00, at the list price of 2026-11-12. Either party may cancel in this chain before Thursday 18:00 UTC.",
+      "summary_sha256": "b4fd8089fccb2b3363ef55db741d65702502d2b35944aebff39b43f4d8c0f120",
+      "consent_to_publish_summary": true,
+      "valid_until": "2026-11-20",
+      "authorized_by": "human owner of each bot (reference kept privately)"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:2bcf49eb6d012606",
+        "alg": "Ed25519",
+        "sig": "YVtmdhK7gQxQcZyXiPlPS1KcKjfoYRVtRGPuvN5Nu6Y0Ukgaz0k4LhemSawqtPkdwHSVTNe2wiL3mJVih7GPDw"
+      },
+      {
+        "kid": "ed25519:af43ab241bb8130f",
+        "alg": "Ed25519",
+        "sig": "7LHuG_UNSqQ0lx_TbJwfHMp8CNEZhCgaCg6DFkvGC7rRO0J5BRIbGIWAMfvIhRucH6xk04ArXfEs0u0hf_LSBA"
+      }
+    ],
+    "entry_hash": "d5cd44864d0b29883023bebf447a115f6f99662f5e632241b26fba4b94bea01b"
+  },
+  {
+    "spec": "botvow/0.1",
+    "chain_id": "demo-9cb9569a8396",
+    "seq": 4,
+    "prev_hash": "d5cd44864d0b29883023bebf447a115f6f99662f5e632241b26fba4b94bea01b",
+    "ts": "2026-11-12T22:04:00Z",
+    "type": "seal",
+    "author": "ed25519:af43ab241bb8130f",
+    "content": {
+      "entries": 4,
+      "note": "chain closed by both Bots"
+    },
+    "signatures": [
+      {
+        "kid": "ed25519:2bcf49eb6d012606",
+        "alg": "Ed25519",
+        "sig": "8Q44761F0n9i11g-RtvQ4xrn9U1UCOL2q-JhQOY9wlG2x8a5pEdzkPPCh5Dtw54TlI2T5PPdP_XHeKb_pvtXAA"
+      },
+      {
+        "kid": "ed25519:af43ab241bb8130f",
+        "alg": "Ed25519",
+        "sig": "g6e8CgCDMWBJTasJUWQXztx-0OtM6TgLFSX2i2wMi-5h2U_gIy06R9qkGjTX7fMm6F440zXk0QXtVgPfyMT0CQ"
+      }
+    ],
+    "entry_hash": "ee5be8bb328d1e8465a80c4ae7e04647a61abcbbbc2c38fa1c0bd693c9e9d3c4"
+  }
+]
