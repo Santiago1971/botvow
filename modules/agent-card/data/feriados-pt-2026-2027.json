@@ -1,0 +1,242 @@
+{
+ "dataset": "Feriados nacionais de Portugal 2026–2027 (calculados)",
+ "version": "0.2-draft",
+ "license": "CC BY 4.0 (our wording of the facts; facts rewritten by Está no Ir from the cited official sources, which keep their own terms)",
+ "generated_at": "2026-11-13T16:01:08+00:00",
+ "rule_sources": [
+  "pt-feriados-obrigatorios",
+  "pt-feriados-facultativos",
+  "pt-feriado-sexta-santa-local"
+ ],
+ "disclaimer_pt": "Datas calculadas a partir do Código do Trabalho (art. 234.º e 235.º). Os nomes são os usuais e não constam do texto legal. Feriados municipais não incluídos. A Sexta-Feira Santa pode ser observada noutro dia com significado local.",
+ "years": {
+  "2026": [
+   {
+    "date": "2026-01-01",
+    "weekday_pt": "quinta-feira",
+    "name_pt": "Ano Novo",
+    "name_en": "New Year's Day",
+    "type": "mandatory",
+    "rule": "01-01"
+   },
+   {
+    "date": "2026-02-17",
+    "weekday_pt": "terça-feira",
+    "name_pt": "Terça-feira de Carnaval",
+    "name_en": "Carnival Tuesday",
+    "type": "optional",
+    "rule": "easter-47"
+   },
+   {
+    "date": "2026-04-03",
+    "weekday_pt": "sexta-feira",
+    "name_pt": "Sexta-Feira Santa",
+    "name_en": "Good Friday",
+    "type": "mandatory",
+    "rule": "easter-2"
+   },
+   {
+    "date": "2026-04-05",
+    "weekday_pt": "domingo",
+    "name_pt": "Domingo de Páscoa",
+    "name_en": "Easter Sunday",
+    "type": "mandatory",
+    "rule": "easter"
+   },
+   {
+    "date": "2026-04-25",
+    "weekday_pt": "sábado",
+    "name_pt": "Dia da Liberdade",
+    "name_en": "Freedom Day",
+    "type": "mandatory",
+    "rule": "04-25"
+   },
+   {
+    "date": "2026-05-01",
+    "weekday_pt": "sexta-feira",
+    "name_pt": "Dia do Trabalhador",
+    "name_en": "Labour Day",
+    "type": "mandatory",
+    "rule": "05-01"
+   },
+   {
+    "date": "2026-06-04",
+    "weekday_pt": "quinta-feira",
+    "name_pt": "Corpo de Deus",
+    "name_en": "Corpus Christi",
+    "type": "mandatory",
+    "rule": "easter+60"
+   },
+   {
+    "date": "2026-06-10",
+    "weekday_pt": "quarta-feira",
+    "name_pt": "Dia de Portugal, de Camões e das Comunidades Portuguesas",
+    "name_en": "Portugal Day",
+    "type": "mandatory",
+    "rule": "06-10"
+   },
+   {
+    "date": "2026-08-15",
+    "weekday_pt": "sábado",
+    "name_pt": "Assunção de Nossa Senhora",
+    "name_en": "Assumption",
+    "type": "mandatory",
+    "rule": "08-15"
+   },
+   {
+    "date": "2026-10-05",
+    "weekday_pt": "segunda-feira",
+    "name_pt": "Implantação da República",
+    "name_en": "Republic Day",
+    "type": "mandatory",
+    "rule": "10-05"
+   },
+   {
+    "date": "2026-11-01",
+    "weekday_pt": "domingo",
+    "name_pt": "Dia de Todos os Santos",
+    "name_en": "All Saints' Day",
+    "type": "mandatory",
+    "rule": "11-01"
+   },
+   {
+    "date": "2026-12-01",
+    "weekday_pt": "terça-feira",
+    "name_pt": "Restauração da Independência",
+    "name_en": "Restoration of Independence",
+    "type": "mandatory",
+    "rule": "12-01"
+   },
+   {
+    "date": "2026-12-08",
+    "weekday_pt": "terça-feira",
+    "name_pt": "Imaculada Conceição",
+    "name_en": "Immaculate Conception",
+    "type": "mandatory",
+    "rule": "12-08"
+   },
+   {
+    "date": "2026-12-25",
+    "weekday_pt": "sexta-feira",
+    "name_pt": "Natal",
+    "name_en": "Christmas Day",
+    "type": "mandatory",
+    "rule": "12-25"
+   }
+  ],
+  "2027": [
+   {
+    "date": "2027-01-01",
+    "weekday_pt": "sexta-feira",
+    "name_pt": "Ano Novo",
+    "name_en": "New Year's Day",
+    "type": "mandatory",
+    "rule": "01-01"
+   },
+   {
+    "date": "2027-02-09",
+    "weekday_pt": "terça-feira",
+    "name_pt": "Terça-feira de Carnaval",
+    "name_en": "Carnival Tuesday",
+    "type": "optional",
+    "rule": "easter-47"
+   },
+   {
+    "date": "2027-03-26",
+    "weekday_pt": "sexta-feira",
+    "name_pt": "Sexta-Feira Santa",
+    "name_en": "Good Friday",
+    "type": "mandatory",
+    "rule": "easter-2"
+   },
+   {
+    "date": "2027-03-28",
+    "weekday_pt": "domingo",
+    "name_pt": "Domingo de Páscoa",
+    "name_en": "Easter Sunday",
+    "type": "mandatory",
+    "rule": "easter"
+   },
+   {
+    "date": "2027-04-25",
+    "weekday_pt": "domingo",
+    "name_pt": "Dia da Liberdade",
+    "name_en": "Freedom Day",
+    "type": "mandatory",
+    "rule": "04-25"
+   },
+   {
+    "date": "2027-05-01",
+    "weekday_pt": "sábado",
+    "name_pt": "Dia do Trabalhador",
+    "name_en": "Labour Day",
+    "type": "mandatory",
+    "rule": "05-01"
+   },
+   {
+    "date": "2027-05-27",
+    "weekday_pt": "quinta-feira",
+    "name_pt": "Corpo de Deus",
+    "name_en": "Corpus Christi",
+    "type": "mandatory",
+    "rule": "easter+60"
+   },
+   {
+    "date": "2027-06-10",
+    "weekday_pt": "quinta-feira",
+    "name_pt": "Dia de Portugal, de Camões e das Comunidades Portuguesas",
+    "name_en": "Portugal Day",
+    "type": "mandatory",
+    "rule": "06-10"
+   },
+   {
+    "date": "2027-08-15",
+    "weekday_pt": "domingo",
+    "name_pt": "Assunção de Nossa Senhora",
+    "name_en": "Assumption",
+    "type": "mandatory",
+    "rule": "08-15"
+   },
+   {
+    "date": "2027-10-05",
+    "weekday_pt": "terça-feira",
+    "name_pt": "Implantação da República",
+    "name_en": "Republic Day",
+    "type": "mandatory",
+    "rule": "10-05"
+   },
+   {
+    "date": "2027-11-01",
+    "weekday_pt": "segunda-feira",
+    "name_pt": "Dia de Todos os Santos",
+    "name_en": "All Saints' Day",
+    "type": "mandatory",
+    "rule": "11-01"
+   },
+   {
+    "date": "2027-12-01",
+    "weekday_pt": "quarta-feira",
+    "name_pt": "Restauração da Independência",
+    "name_en": "Restoration of Independence",
+    "type": "mandatory",
+    "rule": "12-01"
+   },
+   {
+    "date": "2027-12-08",
+    "weekday_pt": "quarta-feira",
+    "name_pt": "Imaculada Conceição",
+    "name_en": "Immaculate Conception",
+    "type": "mandatory",
+    "rule": "12-08"
+   },
+   {
+    "date": "2027-12-25",
+    "weekday_pt": "sábado",
+    "name_pt": "Natal",
+    "name_en": "Christmas Day",
+    "type": "mandatory",
+    "rule": "12-25"
+   }
+  ]
+ }
+}
