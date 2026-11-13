@@ -14,6 +14,10 @@ for f in examples/bot2bot-log-tampered.json examples/open-door-own-rules-rejecte
 done
 echo "--- unit tests ---"
 python3 -m unittest discover -s tests
+echo "--- module tests: translator ---"
+python3 modules/translator/tests/test_translate.py
+echo "--- module tests: agent-card ---"
+python3 modules/agent-card/tests/test_cards.py
 if python3 -c "import jsonschema" 2>/dev/null; then
   echo "--- schema ---"
   python3 tools/check_schema.py examples/bot2bot-log.json

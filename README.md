@@ -50,7 +50,15 @@ All parties and keys are **fictional**. Demo keys come from fixed public seeds s
 ## Works with A2A, MCP and HTTPS
 A BotVow chain is just JSON, so it can travel as A2A task metadata, be produced and checked by an MCP tool, or be posted over plain HTTPS. Parties can link their key to an A2A Agent Card.
 
+## Modules
+
+Two optional modules live under [`modules/`](modules/). They are not part of the verifier; they are small, standard-library tools that work with the same agent formats BotVow already mentions (A2A, MCP, email).
+
+- **[Protocol translator](modules/translator/)** — rewrite a request, response, error or task between MCP, A2A 1.0, A2A 0.3 and plain email, without ever executing it. 18 tests in `modules/translator/tests/`.
+- **[Local Agent Card](modules/agent-card/)** — a small profile (`local-agent-card/0.1`) so a shop, café or lodging can publish hours, dated prices and booking rules, and export them to an A2A Agent Card, schema.org JSON-LD and llms.txt. The two example cards are **FICTIONAL** and labelled as such. 10 tests in `modules/agent-card/tests/`.
+
 ## Related work
+
 BotVow builds on, and is narrower than, existing work: Google AP2 mandates (payments), A2A signed Agent Cards, IETF drafts on co-signed agent agreements and bilateral attestation, the Open Agent Protocol, and agent-receipt projects. See [docs/overview.md](docs/overview.md) for links.
 
 ## Licence
