@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": 3, "method": "message/send", "params": {"message": {"kind": "message", "role": "user", "messageId": "m-3", "parts": [{"kind": "text", "text": "Quero uma escapadinha de 3 dias a partir de Lisboa, sem carro."}]}}}

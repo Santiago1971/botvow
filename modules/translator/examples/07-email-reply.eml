@@ -1,0 +1,10 @@
+From: estanoir@example.org
+To: agent@example.org
+Subject: Re: Fim de semana
+In-Reply-To: <abc-123@example.org>
+
+Encontrei 2 roteiros.
+
+---agent-data---
+{"kind": "response", "status": "completed", "data": {"trips": ["douro-2-dias", "aveiro-2-dias"]}}
+---end-agent-data---

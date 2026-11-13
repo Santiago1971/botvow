@@ -1,0 +1,1 @@
+{"jsonrpc": "2.0", "id": "req-1", "result": {"task": {"id": "task-42", "contextId": "ctx-9", "status": {"state": "TASK_STATE_FAILED", "message": {"role": "ROLE_AGENT", "parts": [{"text": "Unknown trip id."}]}}}}}
