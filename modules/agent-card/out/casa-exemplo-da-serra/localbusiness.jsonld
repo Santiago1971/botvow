@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Casa Exemplo da Serra (FICTÍCIO)",
+  "description": "Exemplo fictício de alojamento local com 3 quartos, a pé da estação de Sintra. Não existe.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sintra",
+    "addressRegion": "Sintra",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ],
+  "knowsLanguage": [
+    "pt",
+    "en",
+    "fr"
+  ],
+  "paymentAccepted": "card, bank_transfer, mbway",
+  "email": "reservas@example.invalid",
+  "checkinTime": "15:00",
+  "checkoutTime": "11:00"
+}

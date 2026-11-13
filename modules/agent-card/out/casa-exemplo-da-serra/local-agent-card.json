@@ -1,0 +1,109 @@
+{
+  "spec": "local-agent-card/0.1",
+  "id": "casa-exemplo-da-serra",
+  "name": "Casa Exemplo da Serra (FICTÍCIO)",
+  "kind": "local_lodging",
+  "demo": true,
+  "description": {
+    "pt": "Exemplo fictício de alojamento local com 3 quartos, a pé da estação de Sintra. Não existe.",
+    "en": "Fictional local lodging with 3 rooms, walking distance from Sintra station. It does not exist.",
+    "fr": "Exemple fictif d'hébergement local, 3 chambres, à pied de la gare de Sintra."
+  },
+  "address": {
+    "locality": "Sintra",
+    "municipality": "Sintra",
+    "country": "PT"
+  },
+  "zones": [
+    {
+      "id": "lisbon-sintra-train-only-1-day",
+      "url": "https://estanoir-bots.pages.dev/trips/lisbon-sintra-train-only-1-day/",
+      "walk_minutes_from_station": 10
+    }
+  ],
+  "languages": [
+    "pt",
+    "en",
+    "fr"
+  ],
+  "opening_hours": {
+    "timezone": "Europe/Lisbon",
+    "weekly": [
+      {
+        "days": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "fri",
+          "sat",
+          "sun"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "public_holidays": "open_as_usual",
+    "exceptions": []
+  },
+  "offers": [
+    {
+      "name": "Quarto duplo (noite)",
+      "price_eur": 95,
+      "price_checked_on": "2026-11-13",
+      "unit": "night",
+      "tags": [
+        "demo-price",
+        "breakfast-included"
+      ]
+    }
+  ],
+  "facts_for_bots": [
+    {
+      "q": "Is there parking?",
+      "a": "No private parking; we recommend coming by train.",
+      "lang": "en",
+      "topic": "parking"
+    },
+    {
+      "q": "Aceitam animais?",
+      "a": "Não.",
+      "lang": "pt",
+      "topic": "pets"
+    }
+  ],
+  "payment_methods": [
+    "card",
+    "bank_transfer",
+    "mbway"
+  ],
+  "contact": {
+    "email": "reservas@example.invalid",
+    "website": "https://example.invalid/casa-exemplo"
+  },
+  "booking": {
+    "method": "email",
+    "target": "reservas@example.invalid",
+    "human_confirmation_required": true,
+    "notes": "Availability is never confirmed by the card; the host replies by email."
+  },
+  "lodging": {
+    "rnal_number": "000000/AL (FICTÍCIO)",
+    "check_in_from": "15:00",
+    "check_out_until": "11:00",
+    "max_guests": 6,
+    "tourist_tax_note": "A taxa municipal turística, se existir, é cobrada à parte (confirmar no município)."
+  },
+  "agent_rules": {
+    "read_only": true,
+    "no_personal_data": true,
+    "prices_are_indicative": true,
+    "may_quote": true,
+    "contact_policy": "Agents may ask for a quote by email; the host answers personally."
+  },
+  "verification": {
+    "status": "demo",
+    "last_updated": "2026-11-13",
+    "valid_until": "2027-05-13"
+  }
+}

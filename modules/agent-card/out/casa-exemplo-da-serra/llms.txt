@@ -1,0 +1,11 @@
+# Casa Exemplo da Serra (FICTÍCIO)
+
+> Fictional local lodging with 3 rooms, walking distance from Sintra station. It does not exist.
+
+- Kind: local_lodging (FICTIONAL DEMO)
+- Where: Sintra, Sintra, Portugal
+- Hours: mon,tue,wed,thu,fri,sat,sun 09:00-21:00
+- Public holidays: open_as_usual
+- Booking: email (reservas@example.invalid), always confirmed by a person
+- Card: local-agent-card.json (local-agent-card/0.1), last updated 2026-11-13
+- Near Está no Ir trip: https://estanoir-bots.pages.dev/trips/lisbon-sintra-train-only-1-day/

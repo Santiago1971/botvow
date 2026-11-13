@@ -1,0 +1,49 @@
+{
+  "name": "Casa Exemplo da Serra (FICTÍCIO)",
+  "description": "Fictional local lodging with 3 rooms, walking distance from Sintra station. It does not exist.",
+  "version": "0.1.0",
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "skills": [
+    {
+      "id": "opening-hours",
+      "name": "Opening hours",
+      "description": "Is the place open on a given date/time (holidays included)?",
+      "tags": [
+        "hours"
+      ]
+    },
+    {
+      "id": "faq",
+      "name": "Questions for bots",
+      "description": "Short answers written by the business.",
+      "tags": [
+        "faq"
+      ]
+    },
+    {
+      "id": "booking-info",
+      "name": "How to book",
+      "description": "How to request a booking; always confirmed by a human.",
+      "tags": [
+        "booking"
+      ]
+    }
+  ],
+  "supportedInterfaces": [
+    {
+      "url": "https://example.invalid/agents/casa-exemplo-da-serra/a2a",
+      "protocolBinding": "JSONRPC",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "_draft_note": "Placeholder interface URL: no endpoint exists. Static card only (local-agent-card/0.1)."
+}
