@@ -1,0 +1,11 @@
+# Café Exemplo do Cais (FICTÍCIO)
+
+> Fictional example: riverside café near the station. It does not exist.
+
+- Kind: cafe_restaurant (FICTIONAL DEMO)
+- Where: Peso da Régua, Peso da Régua, Portugal
+- Hours: tue,wed,thu,fri 08:00-19:00; sat,sun 09:00-20:00
+- Public holidays: open_as_sunday
+- Booking: phone (+351 000 000 000), always confirmed by a person
+- Card: local-agent-card.json (local-agent-card/0.1), last updated 2026-11-13
+- Near Está no Ir trip: https://estanoir-bots.pages.dev/trips/porto-douro-train-2-days/

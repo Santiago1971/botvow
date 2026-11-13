@@ -1,0 +1,41 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Café Exemplo do Cais (FICTÍCIO)",
+  "description": "Exemplo fictício: café junto ao rio, perto da estação. Não existe.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Peso da Régua",
+    "addressRegion": "Peso da Régua",
+    "addressCountry": "PT"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday"
+      ],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  ],
+  "knowsLanguage": [
+    "pt",
+    "en"
+  ],
+  "paymentAccepted": "cash, card, mbway",
+  "telephone": "+351 000 000 000",
+  "email": "cafe@example.invalid"
+}

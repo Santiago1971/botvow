@@ -1,0 +1,123 @@
+{
+  "spec": "local-agent-card/0.1",
+  "id": "cafe-exemplo-do-cais",
+  "name": "Café Exemplo do Cais (FICTÍCIO)",
+  "kind": "cafe_restaurant",
+  "demo": true,
+  "description": {
+    "pt": "Exemplo fictício: café junto ao rio, perto da estação. Não existe.",
+    "en": "Fictional example: riverside café near the station. It does not exist."
+  },
+  "address": {
+    "locality": "Peso da Régua",
+    "municipality": "Peso da Régua",
+    "country": "PT"
+  },
+  "zones": [
+    {
+      "id": "porto-douro-train-2-days",
+      "url": "https://estanoir-bots.pages.dev/trips/porto-douro-train-2-days/",
+      "walk_minutes_from_station": 5
+    }
+  ],
+  "languages": [
+    "pt",
+    "en"
+  ],
+  "opening_hours": {
+    "timezone": "Europe/Lisbon",
+    "weekly": [
+      {
+        "days": [
+          "tue",
+          "wed",
+          "thu",
+          "fri"
+        ],
+        "opens": "08:00",
+        "closes": "19:00"
+      },
+      {
+        "days": [
+          "sat",
+          "sun"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "public_holidays": "open_as_sunday",
+    "exceptions": [
+      {
+        "date": "2026-12-25",
+        "closed": true,
+        "note": "Natal / Christmas"
+      }
+    ]
+  },
+  "offers": [
+    {
+      "name": "Café (expresso)",
+      "price_eur": 0.9,
+      "price_checked_on": "2026-11-13",
+      "unit": "chávena",
+      "tags": [
+        "demo-price"
+      ]
+    },
+    {
+      "name": "Tosta mista",
+      "price_eur": 3.5,
+      "price_checked_on": "2026-11-13",
+      "tags": [
+        "demo-price",
+        "vegetarian:no"
+      ]
+    }
+  ],
+  "facts_for_bots": [
+    {
+      "q": "Aceitam grupos?",
+      "a": "Até 12 pessoas, com marcação por telefone.",
+      "lang": "pt",
+      "topic": "groups"
+    },
+    {
+      "q": "Do you have vegan options?",
+      "a": "Only fruit and toast without butter.",
+      "lang": "en",
+      "topic": "diet"
+    }
+  ],
+  "payment_methods": [
+    "cash",
+    "card",
+    "mbway"
+  ],
+  "accessibility": {
+    "step_free_entrance": true,
+    "accessible_toilet": false
+  },
+  "contact": {
+    "phone": "+351 000 000 000",
+    "email": "cafe@example.invalid"
+  },
+  "booking": {
+    "method": "phone",
+    "target": "+351 000 000 000",
+    "human_confirmation_required": true,
+    "groups_max": 12
+  },
+  "agent_rules": {
+    "read_only": true,
+    "no_personal_data": true,
+    "prices_are_indicative": true,
+    "may_quote": false,
+    "contact_policy": "Bots may read this card. Do not send marketing. Bookings only by phone, confirmed by staff."
+  },
+  "verification": {
+    "status": "demo",
+    "last_updated": "2026-11-13",
+    "valid_until": "2027-05-13"
+  }
+}
