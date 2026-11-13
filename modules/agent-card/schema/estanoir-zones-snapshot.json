@@ -1,0 +1,101 @@
+{
+ "source": "https://estanoir-bots.pages.dev/trips.json",
+ "fetched_on": "2026-11-13",
+ "zones": [
+  {
+   "id": "porto-como-bernina-milao",
+   "destination": "Lago de Como (Cólico, Varenna, Bellagio), Bernina Express (Tirano–St. Moritz), Milão",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-como-bernina-milao/"
+  },
+  {
+   "id": "porto-douro-train-2-days",
+   "destination": "Douro Valley: Peso da Régua, Pinhão (and optionally Pocinho)",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-douro-train-2-days/"
+  },
+  {
+   "id": "lisbon-cacilhas-ferry-on-foot",
+   "destination": "Cacilhas and Almada (Elevador da Boca do Vento, Cristo Rei)",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-cacilhas-ferry-on-foot/"
+  },
+  {
+   "id": "algarve-without-car-3-days",
+   "destination": "Lagos (Ponta da Piedade), Tavira (Ilha de Tavira), Faro",
+   "url": "https://estanoir-bots.pages.dev/trips/algarve-without-car-3-days/"
+  },
+  {
+   "id": "porto-vigo-train-boat",
+   "destination": "Vigo (Casco Vello, O Castro) and Cangas or the Cíes Islands",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-vigo-train-boat/"
+  },
+  {
+   "id": "lisbon-seville-flight-on-foot",
+   "destination": "Seville: Real Alcázar, Plaza de España, Parque de María Luisa, Triana",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-seville-flight-on-foot/"
+  },
+  {
+   "id": "porto-bordeaux-saint-emilion",
+   "destination": "Bordeaux (Place de la Bourse, Cité du Vin) and Saint-Émilion",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-bordeaux-saint-emilion/"
+  },
+  {
+   "id": "lisbon-venice-by-water",
+   "destination": "Venice (Grand Canal) and Burano",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-venice-by-water/"
+  },
+  {
+   "id": "lisbon-amsterdam-haarlem",
+   "destination": "Amsterdam (Canal Ring, Jordaan) and Haarlem",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-amsterdam-haarlem/"
+  },
+  {
+   "id": "lisbon-evora-train-1-day",
+   "destination": "Évora: Templo Romano, Sé, Capela dos Ossos",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-evora-train-1-day/"
+  },
+  {
+   "id": "coimbra-train-metrobus-2-days",
+   "destination": "Coimbra: University (Biblioteca Joanina), Botanical Garden, Baixa",
+   "url": "https://estanoir-bots.pages.dev/trips/coimbra-train-metrobus-2-days/"
+  },
+  {
+   "id": "lisbon-obidos-bus-1-day",
+   "destination": "Óbidos: the walled village and its walls",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-obidos-bus-1-day/"
+  },
+  {
+   "id": "lisbon-sintra-train-only-1-day",
+   "destination": "Sintra: Palácio Nacional da Pena or Palácio Nacional de Sintra, Castelo dos Mouros",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-sintra-train-only-1-day/"
+  },
+  {
+   "id": "porto-braga-guimaraes-train-2-days",
+   "destination": "Braga (Bom Jesus do Monte) and Guimarães (Paço dos Duques, castle)",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-braga-guimaraes-train-2-days/"
+  },
+  {
+   "id": "lisbon-tomar-train-1-day",
+   "destination": "Tomar: Convento de Cristo and the old town",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-tomar-train-1-day/"
+  },
+  {
+   "id": "lisbon-madrid-flight-metro-3-days",
+   "destination": "Madrid: Museo del Prado, Retiro, Palacio Real",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-madrid-flight-metro-3-days/"
+  },
+  {
+   "id": "porto-santiago-coach-2-days",
+   "destination": "Santiago de Compostela: the cathedral, Praza do Obradoiro, the old town",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-santiago-coach-2-days/"
+  },
+  {
+   "id": "porto-viana-do-castelo-train-1-day",
+   "destination": "Viana do Castelo: Santa Luzia, the Gil Eannes ship, the old centre",
+   "url": "https://estanoir-bots.pages.dev/trips/porto-viana-do-castelo-train-1-day/"
+  },
+  {
+   "id": "lisbon-setubal-troia-train-boat-1-day",
+   "destination": "Setúbal and the Tróia peninsula",
+   "url": "https://estanoir-bots.pages.dev/trips/lisbon-setubal-troia-train-boat-1-day/"
+  }
+ ]
+}

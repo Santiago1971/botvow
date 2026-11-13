@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "local-agent-card.schema.json",
+  "title": "Local Agent Card v0.1 (draft) — how a shop, café or local lodging answers other bots",
+  "description": "Self-declared, read-only facts about a small local business, written so that other agents can answer questions (hours, offer, how to book) without scraping. Bookings always need a human confirmation by the business.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["spec", "id", "name", "kind", "demo", "address", "languages", "opening_hours", "contact", "booking", "agent_rules", "verification"],
+  "properties": {
+    "spec": {"const": "local-agent-card/0.1"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$"},
+    "name": {"type": "string", "minLength": 2, "maxLength": 120},
+    "kind": {"enum": ["shop", "cafe_restaurant", "local_lodging", "service", "market_stall"]},
+    "demo": {"type": "boolean", "description": "true = fictional example. Fictional cards must say FICTÍCIO/FICTIONAL in the name."},
+    "description": {"type": "object", "description": "language code -> short text", "additionalProperties": {"type": "string", "maxLength": 500}},
+    "address": {
+      "type": "object", "additionalProperties": false, "required": ["locality", "municipality", "country"],
+      "properties": {
+        "street": {"type": "string"}, "postal_code": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{3}$"},
+        "locality": {"type": "string"}, "municipality": {"type": "string"}, "country": {"const": "PT"},
+        "geo": {"type": "object", "required": ["lat", "lon"], "additionalProperties": false,
+                "properties": {"lat": {"type": "number", "minimum": 32, "maximum": 43}, "lon": {"type": "number", "minimum": -32, "maximum": -6}}}
+      }
+    },
+    "zones": {"type": "array", "description": "Está no Ir trip/zone ids this business is near (optional link to the ecosystem)",
+              "items": {"type": "object", "required": ["id"], "additionalProperties": false,
+                        "properties": {"id": {"type": "string"}, "url": {"type": "string", "pattern": "^https://"}, "walk_minutes_from_station": {"type": "integer", "minimum": 0}}}},
+    "languages": {"type": "array", "minItems": 1, "items": {"enum": ["pt", "en", "es", "fr", "de", "it"]}},
+    "opening_hours": {
+      "type": "object", "additionalProperties": false, "required": ["timezone", "weekly"],
+      "properties": {
+        "timezone": {"enum": ["Europe/Lisbon", "Atlantic/Madeira", "Atlantic/Azores"]},
+        "weekly": {"type": "array", "items": {"$ref": "#/$defs/slot"}},
+        "public_holidays": {"enum": ["closed", "open_as_sunday", "open_as_usual", "ask"], "description": "behaviour on national mandatory holidays"},
+        "exceptions": {"type": "array", "items": {"type": "object", "required": ["date", "closed"], "additionalProperties": false,
+                       "properties": {"date": {"type": "string", "format": "date"}, "closed": {"type": "boolean"}, "slots": {"type": "array", "items": {"$ref": "#/$defs/time_range"}}, "note": {"type": "string"}}}},
+        "always_open": {"type": "boolean", "description": "lodging reception 24h etc."}
+      }
+    },
+    "offers": {"type": "array", "items": {"type": "object", "required": ["name"], "additionalProperties": false,
+               "properties": {"name": {"type": "string"}, "price_eur": {"type": "number", "minimum": 0}, "price_checked_on": {"type": "string", "format": "date"},
+                              "unit": {"type": "string"}, "tags": {"type": "array", "items": {"type": "string"}}}}},
+    "facts_for_bots": {"type": "array", "description": "Short Q/A pairs, in the business's own words",
+                       "items": {"type": "object", "required": ["q", "a", "lang"], "additionalProperties": false,
+                                 "properties": {"q": {"type": "string"}, "a": {"type": "string"}, "lang": {"type": "string"}, "topic": {"type": "string"}}}},
+    "payment_methods": {"type": "array", "items": {"enum": ["cash", "card", "contactless", "mbway", "multibanco_reference", "bank_transfer"]}},
+    "accessibility": {"type": "object", "additionalProperties": {"type": ["boolean", "string"]}},
+    "contact": {"type": "object", "additionalProperties": false, "description": "BUSINESS contacts only — never a personal mobile or home address",
+                "properties": {"phone": {"type": "string"}, "email": {"type": "string"}, "website": {"type": "string"}}},
+    "booking": {"type": "object", "additionalProperties": false, "required": ["method", "human_confirmation_required"],
+                "properties": {"method": {"enum": ["none", "phone", "email", "url", "a2a"]}, "target": {"type": "string"},
+                               "human_confirmation_required": {"const": true}, "groups_max": {"type": "integer", "minimum": 1}, "notes": {"type": "string"}}},
+    "lodging": {"type": "object", "additionalProperties": false, "required": ["rnal_number"],
+                "properties": {"rnal_number": {"type": "string", "description": "Registo Nacional de Alojamento Local number (mandatory for AL in Portugal)"},
+                               "check_in_from": {"$ref": "#/$defs/hhmm"}, "check_out_until": {"$ref": "#/$defs/hhmm"},
+                               "tourist_tax_note": {"type": "string"}, "max_guests": {"type": "integer", "minimum": 1}}},
+    "agent_rules": {"type": "object", "additionalProperties": false, "required": ["read_only", "no_personal_data", "prices_are_indicative"],
+                    "properties": {"read_only": {"type": "boolean"}, "no_personal_data": {"const": true}, "prices_are_indicative": {"const": true},
+                                   "may_quote": {"type": "boolean"}, "contact_policy": {"type": "string"}}},
+    "verification": {"type": "object", "additionalProperties": false, "required": ["status", "last_updated", "valid_until"],
+                     "properties": {"status": {"enum": ["self-declared", "owner-verified", "demo"]}, "last_updated": {"type": "string", "format": "date"},
+                                    "valid_until": {"type": "string", "format": "date"}, "botvow_public_key": {"type": "string", "pattern": "^ed25519:"}}}
+  },
+  "$defs": {
+    "hhmm": {"type": "string", "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"},
+    "time_range": {"type": "object", "required": ["opens", "closes"], "additionalProperties": false,
+                   "properties": {"opens": {"$ref": "#/$defs/hhmm"}, "closes": {"$ref": "#/$defs/hhmm"}}},
+    "slot": {"type": "object", "required": ["days", "opens", "closes"], "additionalProperties": false,
+             "properties": {"days": {"type": "array", "minItems": 1, "items": {"enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]}},
+                            "opens": {"$ref": "#/$defs/hhmm"}, "closes": {"$ref": "#/$defs/hhmm"}}}
+  },
+  "allOf": [
+    {"if": {"properties": {"kind": {"const": "local_lodging"}}}, "then": {"required": ["lodging"]}},
+    {"if": {"properties": {"demo": {"const": true}}}, "then": {"properties": {"name": {"pattern": "(FICTÍCIO|FICTIONAL)"}, "verification": {"properties": {"status": {"const": "demo"}}}}}}
+  ]
+}
