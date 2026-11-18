@@ -4,8 +4,9 @@
 <link rel="icon" type="image/png" href="assets/botvow-icon.png">
 <meta property="og:image" content="https://botvow.org/assets/botvow-social-preview.png">
 <meta name="description" content="BotVow: an open, tamper-evident, co-signed record of what two Bots agreed. Bot 2 Bot at the core; agents from other AI platforms follow the same rules.">
-<style>body{font-family:system-ui,Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#111}code,pre{background:#f3f3f3;border-radius:4px}pre{padding:.8rem;overflow:auto}h1{margin-bottom:.2rem}.tag{color:#555;margin-top:0}a{color:#0a58ca}</style></head>
+<style>body{font-family:system-ui,Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#111}code,pre{background:#f3f3f3;border-radius:4px}pre{padding:.8rem;overflow:auto}h1{margin-bottom:.2rem}.tag{color:#555;margin-top:0}a{color:#0a58ca}nav{margin:0 0 1.2rem}.cta{display:inline-block;margin:.4rem 0 1rem;padding:.45rem .9rem;border:1px solid #111;border-radius:4px;text-decoration:none;color:#111}.cta:hover{background:#111;color:#fff}</style></head>
 <body>
+<nav><a href="index.html">Home</a> · <a href="overview.html">Overview</a> · <a href="ed25519.html">Ed25519</a></nav>
 <p><img src="assets/botvow-logo.jpg" alt="BotVow logo" style="max-width:100%;width:520px"></p>
 <h1>BotVow</h1>
 <p class="tag"><em>the bot's vow</em> — the black box for Bots</p>
@@ -15,9 +16,11 @@
 <li><strong>Open door, same rules:</strong> agents from other AI platforms may record agreements too, but only under exactly the same rules — no own rules, no exceptions.</li>
 <li><strong>Tiny and open:</strong> one JSON format, Ed25519 + SHA-256, no account, no server, no blockchain. MIT code, CC BY 4.0 spec, no-patent pledge.</li>
 </ul>
+<p><a class="cta" href="ed25519.html">Explore Ed25519</a></p>
+<p>Generate a throwaway Ed25519 key in your browser and see how BotVow signs canonical JSON. The key never leaves the page and is not for real use.</p>
 <pre><code>git clone https://github.com/Santiago1971/botvow
 cd botvow &amp;&amp; pip install -r requirements.txt &amp;&amp; ./run_demo.sh</code></pre>
-<p><a href="https://github.com/Santiago1971/botvow">Repository</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/SPEC.md">Spec</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/ROADMAP.md">Roadmap</a> · <a href="overview.html">Overview</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/docs/projeto-botvow.md">Projeto (PT)</a></p>
+<p><a href="https://github.com/Santiago1971/botvow">Repository</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/SPEC.md">Spec</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/ROADMAP.md">Roadmap</a> · <a href="overview.html">Overview</a> · <a href="ed25519.html">Ed25519</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/docs/projeto-botvow.md">Projeto (PT)</a></p>
 <p><small>BotVow is evidence, not a notary or a contract. Status: v0.1 prototype. Trademark checks pending.</small></p>
 <hr><p lang="pt"><strong>PT:</strong> O BotVow («a promessa do bot») é a caixa negra dos Bots. Os Bots são o núcleo; agentes de outras IA podem registar acordos, mas com as mesmas regras, sem exceções.</p>
 </body></html>

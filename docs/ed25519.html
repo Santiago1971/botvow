@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore Ed25519 — BotVow</title>
+<link rel="icon" type="image/png" href="assets/botvow-icon.png">
+<meta property="og:image" content="https://botvow.org/assets/botvow-social-preview.png">
+<meta name="description" content="Generate a throwaway Ed25519 key in your browser and see how BotVow signs canonical JSON. Keys never leave this page.">
+<style>
+body{font-family:system-ui,Arial,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#111}
+code,pre,textarea.mono{background:#f3f3f3;border-radius:4px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9rem}
+pre,textarea.mono{padding:.8rem;overflow:auto;white-space:pre-wrap;word-break:break-all}
+h1{margin-bottom:.2rem}
+.tag{color:#555;margin-top:0}
+a{color:#0a58ca}
+nav{margin:0 0 1.2rem}
+label{display:block;font-weight:600;margin:.8rem 0 .3rem}
+textarea{width:100%;min-height:6rem;box-sizing:border-box;padding:.6rem;border:1px solid #ccc;border-radius:4px;font:inherit}
+textarea.mono{min-height:9rem;border:1px solid #ccc}
+button{font:inherit;padding:.4rem .8rem;margin:.15rem .4rem .15rem 0;border:1px solid #111;border-radius:4px;background:#fff;color:#111;cursor:pointer}
+button:hover{background:#111;color:#fff}
+code.key{display:inline-block;padding:.15rem .35rem;word-break:break-all}
+.result{min-height:1.4em;font-weight:600}
+.result.ok{color:#0a7a2f}
+.result.bad{color:#a40000}
+.note{color:#333}
+section{margin:1.8rem 0}
+#privwrap{margin-top:.6rem}
+</style></head>
+<body>
+<nav><a href="index.html">Home</a> · <a href="overview.html">Overview</a> · <a href="ed25519.html">Ed25519</a></nav>
+<p><img src="assets/botvow-logo.jpg" alt="BotVow logo" style="max-width:100%;width:520px"></p>
+<h1>Explore Ed25519</h1>
+<p class="tag"><em>A browser-only demo of the keys and canonical form BotVow uses</em></p>
+<p>BotVow signs every entry with Ed25519 over a canonical JSON body. This page does that here, in your browser: it generates a throwaway key, signs a sentence and a sample entry body, and shows that a later change fails verification. Nothing is sent to a server. This is not a BotVow chain — a real chain needs two parties, a genesis, and the rest of the rules in the <a href="https://github.com/Santiago1971/botvow/blob/main/SPEC.md">spec</a>.</p>
+
+<section>
+<h2>Throwaway key</h2>
+<p class="note">The key pair is created in this page with <code>Ed25519</code> and never leaves the browser. The public key is raw, base64url without padding, as the spec carries it. The <code>kid</code> is exactly <code>ed25519:</code> plus the first 16 hex characters of SHA-256 of that raw public key.</p>
+<p><strong>Public key</strong> <code class="key" id="pubkey"></code></p>
+<p><strong>kid</strong> <code class="key" id="kid"></code></p>
+<p>
+  <button type="button" id="reveal" aria-expanded="false" aria-controls="privwrap">Show private key</button>
+  <button type="button" id="newkey">Generate a new key</button>
+</p>
+<div id="privwrap" hidden>
+  <p><strong>Private key</strong> (raw 32-byte seed, base64url) <code class="key" id="privkey"></code></p>
+  <p class="note"><small>Throwaway demo key. Do not use it for anything real.</small></p>
+</div>
+</section>
+
+<section>
+<h2>1. Sign a sentence</h2>
+<p>The signature is Ed25519 over the UTF-8 bytes of the text below. Change a character without signing again and verification fails.</p>
+<label for="message">Message</label>
+<textarea id="message" spellcheck="false"></textarea>
+<p>
+  <button type="button" id="sign-text">Sign this sentence</button>
+  <button type="button" id="verify-text">Verify</button>
+</p>
+<p><strong>Signature</strong> (base64url) <code class="key" id="sig-text"></code></p>
+<p id="result-text" class="result" aria-live="polite"></p>
+</section>
+
+<section>
+<h2>2. Sign canonical JSON, as BotVow does</h2>
+<p>BotVow does not sign the raw message. It signs <code>canonical(body(e))</code>: UTF-8 JSON with keys sorted lexicographically, no insignificant whitespace, and no floating-point numbers — a strict subset of RFC 8785. The body is the entry without <code>signatures</code> and <code>entry_hash</code>. A real entry stores the message as <code>content.payload_sha256</code>, not the raw text. The signature object is <code>{"kid", "alg":"Ed25519", "sig"}</code>.</p>
+<p class="note">The box below is a sample single-party <code>proposal</code> body, built from the sentence above. It is only here to show the canonical form and the signature. It is not a valid BotVow log.</p>
+<label for="canon">Canonical JSON</label>
+<textarea id="canon" class="mono" spellcheck="false"></textarea>
+<input type="hidden" id="canon-ts" value="">
+<p>
+  <button type="button" id="sign-json">Sign this canonical JSON</button>
+  <button type="button" id="verify-json">Verify</button>
+  <button type="button" id="tamper-json">Change one character</button>
+</p>
+<p><strong>Signature</strong> <code>{"alg":"Ed25519","kid","sig"}</code></p>
+<pre id="sig-json"></pre>
+<p id="result-json" class="result" aria-live="polite"></p>
+</section>
+
+<p><a href="index.html">Home</a> · <a href="overview.html">Overview</a> · <a href="ed25519.html">Ed25519</a> · <a href="https://github.com/Santiago1971/botvow">Repository</a> · <a href="https://github.com/Santiago1971/botvow/blob/main/SPEC.md">Spec</a></p>
+<p><small>BotVow is evidence, not a notary or a contract. Status: v0.1 prototype. This page is a demo of Ed25519 and canonical JSON, not a complete verifier.</small></p>
+<script type="module" src="ed25519.js"></script>
+</body></html>
