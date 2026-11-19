@@ -1,0 +1,5 @@
+BotVow chain-head anchor
+spec: botvow/0.1
+chain_id: bv-6359d810078e
+head: 205bc1897e1e7ad30012aab5915a84b82397f3114ac368cdabafb52ddddbac87
+record_ts: 2026-11-14T14:05:32Z
